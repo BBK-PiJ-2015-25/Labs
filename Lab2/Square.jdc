@@ -1,0 +1,6 @@
+println("Hello Dave!");
+println("Ente a number:");
+
+int num = readInt();
+
+println("I entered "+num+". End.");

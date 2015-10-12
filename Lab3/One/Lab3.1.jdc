@@ -1,0 +1,22 @@
+println("Starting Lab3.1");
+
+double d1 = 1.255;
+double d2 = d1 + 7 - 4 - 3;
+
+double d3 = d1 + 7;
+double d4 = d3 - 4;
+double d5 = d4 - 3;
+
+double d6 = (double)(d1 + 7 - 4 - 3);
+
+println(d3);
+println(d4);
+println(d5);
+
+println(d6);
+
+if (d1 == d2) {
+    println("Equal: "+d1);
+} else {
+    println("Not equal: "+d2);
+}
