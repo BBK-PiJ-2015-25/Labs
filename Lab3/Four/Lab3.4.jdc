@@ -1,0 +1,34 @@
+println("Lab 3.4 - Distance point-to-point");
+
+int i = 3;
+double closest = 0;
+double total   = 0;
+String userX;
+String userY;
+Point pos;
+
+for (int x = 0; x < i; x++) {
+    pos = new Point();
+
+    println("Enter a value for x:");
+    userX = System.console().readLine();
+    pos.x = Double.parseDouble(userX);
+
+    println("Enter a value for y:");
+    userY = System.console().readLine();
+    pos.y = Double.parseDouble(userY);
+
+    total = (pos.x*1 - pos.x*2)*2 + (pos.y*1 - pos.y*2)*2;
+    
+    if (total > closest) {
+        closest = total;
+    }
+}
+
+println("The closest point is " + closest);
+println("Goodbye.");
+
+class Point {
+    double x;
+    double y;
+}
