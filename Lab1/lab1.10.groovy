@@ -1,6 +1,6 @@
-// Lab 1.9 - Going up!
+// Lab 1.10 - You said high, I said low. . .
 
-println('Lab 1.9 - Going up!');
+println('Lab 1.10 - You said high, I said low. . .');
 
 int current = 0;
 int previous = 0;
@@ -11,7 +11,7 @@ while (current != -1) {
 	String input = System.console().readLine();
 	current = Integer.parseInt(input);
 
-	if (previous != current - 1 && previous != 0 && current != -1) {
+	if ((previous != current - 1 && previous != current + 1) && previous != 0 && current != -1) {
 		result = 0;
 	}
 
