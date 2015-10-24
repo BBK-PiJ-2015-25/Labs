@@ -14,8 +14,8 @@ int i = 10;
 while (i > 0) {
     println userNumber + " - " + i;
     if (userNumber % i == 0 && i != userNumber && i != 1) {
-	println "This number is not a prime number";
-	break;
+		println "This number is not a prime number";
+		break;
     }
     i--;
 }

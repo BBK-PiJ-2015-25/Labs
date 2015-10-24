@@ -1,31 +1,43 @@
 println("Lab 3.4 - Distance point-to-point");
 
-int i = 3;
-double closest = 0;
-double total   = 0;
-String userX;
-String userY;
-Point pos;
+Point one = new Point();
+Point two = new Point();
+Point three = new Point();
 
-for (int x = 0; x < i; x++) {
-    pos = new Point();
+int x;
+int y;
 
-    println("Enter a value for x:");
-    userX = System.console().readLine();
-    pos.x = Double.parseDouble(userX);
+println("What is the x for point one?");
+one.x = readInt();
+println("What is the y for point one?");
+one.y = readInt();
 
-    println("Enter a value for y:");
-    userY = System.console().readLine();
-    pos.y = Double.parseDouble(userY);
+println("What is the x for point two?");
+two.x = readInt();
+println("What is the y for point two?");
+two.y = readInt();
 
-    total = (pos.x*1 - pos.x*2)*2 + (pos.y*1 - pos.y*2)*2;
-    
-    if (total > closest) {
-        closest = total;
-    }
+println("What is the x for point three?");
+three.x = readInt();
+println("What is the y for point three?");
+three.y = readInt();
+
+double oneToTwo = (one.x - two.x) * (one.x - two.x) + (one.y - two.y) * (one.y - two.y);
+double twoToThree = (two.x - three.x) * (two.x - three.x) + (two.y - three.y) * (two.y - three.y);
+double oneToThree = (one.x - three.x) * (one.x - three.x) + (one.y - three.y) * (one.y - three.y);
+
+if (oneToTwo < twoToThree && oneToTwo < oneToThree) {
+    println("Point one and two are closest at: " + oneToTwo);
 }
 
-println("The closest point is " + closest);
+if (twoToThree < oneToTwo && twoToThree < oneToThree) {
+    println("Point two and three are closest at: " + oneToTwo);
+}
+
+if (oneToThree < oneToTwo && oneToThree < twoToThree) {
+    println("Point one and three are closest at: " + oneToThree);
+}
+
 println("Goodbye.");
 
 class Point {

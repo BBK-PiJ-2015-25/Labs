@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+
+public class Lab3 { 
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Lab 3.4 - Distance point-to-point");
+        Point one = new Point();
+        Point two = new Point();
+        Point three = new Point();
+        int x;
+        int y;
+        System.out.println("What is the x for point one?");
+        one.x = input.nextInt();
+        System.out.println("What is the y for point one?");
+        one.y = input.nextInt();
+        System.out.println("What is the x for point two?");
+        two.x = input.nextInt();
+        System.out.println("What is the y for point two?");
+        two.y = input.nextInt();
+        System.out.println("What is the x for point three?");
+        three.x = input.nextInt();
+        System.out.println("What is the y for point three?");
+        three.y = input.nextInt();
+        double oneToTwo = (one.x - two.x) * (one.x - two.x) + (one.y - two.y) * (one.y - two.y);
+        double twoToThree = (two.x - three.x) * (two.x - three.x) + (two.y - three.y) * (two.y - three.y);
+        double oneToThree = (one.x - three.x) * (one.x - three.x) + (one.y - three.y) * (one.y - three.y);
+        if (oneToTwo < twoToThree && oneToTwo < oneToThree) {
+            System.out.println("Point one and two are closest at: " + oneToTwo);
+        }
+        if (twoToThree < oneToTwo && twoToThree < oneToThree) {
+            System.out.println("Point two and three are closest at: " + oneToTwo);
+        }
+        if (oneToThree < oneToTwo && oneToThree < twoToThree) {
+            System.out.println("Point one and three are closest at: " + oneToThree);
+        }
+        System.out.println("Goodbye.");
+    }
+    static class Point {
+        double x;
+        double y;
+    }
+}
