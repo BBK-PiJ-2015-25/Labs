@@ -1,0 +1,38 @@
+println("Lab 3.5 - Rectangle");
+
+Rectangle rectangle = new Rectangle();
+rectangle.upLeft = new Point();
+rectangle.downRight = new Point();
+
+println("What is the x value for the upper left point?");
+rectangle.upLeft.x = readInt();
+
+println("What is the y value for the upper left point?");
+rectangle.upLeft.y = readInt();
+
+println("What is the x value for the lower right point?");
+rectangle.downRight.x = readInt();
+
+println("What is the y value for the lower right point?");
+rectangle.downRight.y = readInt();
+
+double height = rectangle.upLeft.y - rectangle.downRight.y ;
+double length = rectangle.downRight.x - rectangle.upLeft.x;
+
+println("The length of the rectangle is: " + length);
+println("The height of the rectangle is: " + height);
+
+println("The perimeter of the rectangle is: " + (length + height) * 2);
+println("The area of the rectangle is: " + length * height);
+
+println("Goodbye.");
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+}
+
+class Point {
+    double x;
+    double y;
+}

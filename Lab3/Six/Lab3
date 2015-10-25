@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+
+public class Lab3 { 
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Lab 3.6 -  Inside or outside");
+        Rectangle rectangle = new Rectangle();
+        rectangle.upLeft = new Point();
+        rectangle.downRight = new Point();
+        Point point = new Point();
+        System.out.println("What is the x value for the upper left point?");
+        rectangle.upLeft.x = input.nextInt();
+        System.out.println("What is the y value for the upper left point?");
+        rectangle.upLeft.y = input.nextInt();
+        System.out.println("What is the x value for the lower right point?");
+        rectangle.downRight.x = input.nextInt();
+        System.out.println("What is the y value for the lower right point?");
+        rectangle.downRight.y = input.nextInt();
+        System.out.println("What is the x value for the third point?");
+        point.x = input.nextInt();
+        System.out.println("What is the y value for the third point?");
+        point.y = input.nextInt();
+        if (point.x <= rectangle.downRight.x && point.x >= rectangle.upLeft.x) {
+            if (point.y <= rectangle.upLeft.y && point.y >= rectangle.downRight.y) {
+                System.out.println("The point is inside.");
+            } else {
+                System.out.println("The point is outside.");
+            }
+        } else {
+            System.out.println("The point is outside.");
+        }
+        System.out.println("Goodbye.");
+    }
+    static class Rectangle {
+        Point upLeft;
+        Point downRight;
+    }
+    static class Point {
+        double x;
+        double y;
+    }
+}

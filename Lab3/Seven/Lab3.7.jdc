@@ -1,0 +1,76 @@
+println("Lab 3.6 -  Inside or outside");
+
+Rectangle rectangleOne = new Rectangle();
+rectangleOne.upLeft = new Point();
+rectangleOne.downRight = new Point();
+
+Rectangle rectangleTwo = new Rectangle();
+rectangleTwo.upLeft = new Point();
+rectangleTwo.downRight = new Point();
+
+Point point = new Point();
+
+// Rectangle one
+println("What is the x value for the upper left point of the first rectangle?");
+rectangleOne.upLeft.x = readInt();
+println("What is the y value for the upper left point of the first rectangle?");
+rectangleOne.upLeft.y = readInt();
+println("What is the x value for the lower right point of the first rectangle?");
+rectangleOne.downRight.x = readInt();
+println("What is the y value for the lower right point?");
+rectangleOne.downRight.y = readInt();
+
+// Rectangle Two
+println("What is the x value for the upper left point for the second rectangle?");
+rectangleTwo.upLeft.x = readInt();
+println("What is the y value for the upper left point for the second rectangle?");
+rectangleTwo.upLeft.y = readInt();
+println("What is the x value for the lower right point for the second rectangle?");
+rectangleTwo.downRight.x = readInt();
+println("What is the y value for the lower right point for the second rectangle?");
+rectangleTwo.downRight.y = readInt();
+
+// Single point
+println("What is the x value for the single point?");
+point.x = readInt();
+println("What is the y value for the single point?");
+point.y = readInt();
+
+boolean rectOne = false;
+boolean rectTwo = false;
+
+if (point.x <= rectangleOne.downRight.x && point.x >= rectangleOne.upLeft.x) {
+	if (point.y <= rectangleOne.upLeft.y && point.y >= rectangleOne.downRight.y) {
+		rectOne = true;
+	}
+}
+
+if (point.x <= rectangleTwo.downRight.x && point.x >= rectangleTwo.upLeft.x) {
+	if (point.y <= rectangleTwo.upLeft.y && point.y >= rectangleTwo.downRight.y) {
+		rectTwo = true;
+	}
+}
+
+if (rectOne == true && rectTwo == true) {
+	println("The single point is inside both rectangles.");
+}
+
+if (rectOne == true && rectTwo == false) {
+	println("The single point is inside the first rectangle only.");
+}
+
+if (rectOne == false && rectTwo == true) {
+	println("The single point is inside the second rectangle only.");
+}
+
+println("Goodbye.");
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+}
+
+class Point {
+    double x;
+    double y;
+}

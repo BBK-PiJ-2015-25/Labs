@@ -1,0 +1,67 @@
+
+import java.util.Scanner;
+
+public class Lab3 { 
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Lab 3.6 -  Inside or outside");
+        Rectangle rectangleOne = new Rectangle();
+        rectangleOne.upLeft = new Point();
+        rectangleOne.downRight = new Point();
+        Rectangle rectangleTwo = new Rectangle();
+        rectangleTwo.upLeft = new Point();
+        rectangleTwo.downRight = new Point();
+        Point point = new Point();
+        System.out.println("What is the x value for the upper left point of the first rectangle?");
+        rectangleOne.upLeft.x = input.nextInt();
+        System.out.println("What is the y value for the upper left point of the first rectangle?");
+        rectangleOne.upLeft.y = input.nextInt();
+        System.out.println("What is the x value for the lower right point of the first rectangle?");
+        rectangleOne.downRight.x = input.nextInt();
+        System.out.println("What is the y value for the lower right point?");
+        rectangleOne.downRight.y = input.nextInt();
+        System.out.println("What is the x value for the upper left point for the second rectangle?");
+        rectangleTwo.upLeft.x = input.nextInt();
+        System.out.println("What is the y value for the upper left point for the second rectangle?");
+        rectangleTwo.upLeft.y = input.nextInt();
+        System.out.println("What is the x value for the lower right point for the second rectangle?");
+        rectangleTwo.downRight.x = input.nextInt();
+        System.out.println("What is the y value for the lower right point for the second rectangle?");
+        rectangleTwo.downRight.y = input.nextInt();
+        System.out.println("What is the x value for the single point?");
+        point.x = input.nextInt();
+        System.out.println("What is the y value for the single point?");
+        point.y = input.nextInt();
+        boolean rectOne = false;
+        boolean rectTwo = false;
+        if (point.x <= rectangleOne.downRight.x && point.x >= rectangleOne.upLeft.x) {
+            if (point.y <= rectangleOne.upLeft.y && point.y >= rectangleOne.downRight.y) {
+                rectOne = true;
+            }
+        }
+        if (point.x <= rectangleTwo.downRight.x && point.x >= rectangleTwo.upLeft.x) {
+            if (point.y <= rectangleTwo.upLeft.y && point.y >= rectangleTwo.downRight.y) {
+                rectTwo = true;
+            }
+        }
+        if (rectOne == true && rectTwo == true) {
+            System.out.println("The single point is inside both rectangles.");
+        }
+        if (rectOne == true && rectTwo == false) {
+            System.out.println("The single point is inside the first rectangle only.");
+        }
+        if (rectOne == false && rectTwo == true) {
+            System.out.println("The single point is inside the second rectangle only.");
+        }
+        System.out.println("Goodbye.");
+    }
+    static class Rectangle {
+        Point upLeft;
+        Point downRight;
+    }
+    static class Point {
+        double x;
+        double y;
+    }
+}

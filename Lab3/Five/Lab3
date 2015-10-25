@@ -1,0 +1,36 @@
+
+import java.util.Scanner;
+
+public class Lab3 { 
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Lab 3.5 - Rectangle");
+        Rectangle rectangle = new Rectangle();
+        rectangle.upLeft = new Point();
+        rectangle.downRight = new Point();
+        System.out.println("What is the x value for the upper left point?");
+        rectangle.upLeft.x = input.nextInt();
+        System.out.println("What is the y value for the upper left point?");
+        rectangle.upLeft.y = input.nextInt();
+        System.out.println("What is the x value for the lower right point?");
+        rectangle.downRight.x = input.nextInt();
+        System.out.println("What is the y value for the lower right point?");
+        rectangle.downRight.y = input.nextInt();
+        double height = rectangle.upLeft.y - rectangle.downRight.y;
+        double length = rectangle.downRight.x - rectangle.upLeft.x;
+        System.out.println("The length of the rectangle is: " + length);
+        System.out.println("The height of the rectangle is: " + height);
+        System.out.println("The perimeter of the rectangle is: " + (length + height) * 2);
+        System.out.println("The area of the rectangle is: " + length * height);
+        System.out.println("Goodbye.");
+    }
+    static class Rectangle {
+        Point upLeft;
+        Point downRight;
+    }
+    static class Point {
+        double x;
+        double y;
+    }
+}

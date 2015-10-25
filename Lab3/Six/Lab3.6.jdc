@@ -1,0 +1,47 @@
+println("Lab 3.6 -  Inside or outside");
+
+Rectangle rectangle = new Rectangle();
+rectangle.upLeft = new Point();
+rectangle.downRight = new Point();
+
+Point point = new Point();
+
+println("What is the x value for the upper left point?");
+rectangle.upLeft.x = readInt();
+
+println("What is the y value for the upper left point?");
+rectangle.upLeft.y = readInt();
+
+println("What is the x value for the lower right point?");
+rectangle.downRight.x = readInt();
+
+println("What is the y value for the lower right point?");
+rectangle.downRight.y = readInt();
+
+println("What is the x value for the third point?");
+point.x = readInt();
+
+println("What is the y value for the third point?");
+point.y = readInt();
+
+if (point.x <= rectangle.downRight.x && point.x >= rectangle.upLeft.x) {
+	if (point.y <= rectangle.upLeft.y && point.y >= rectangle.downRight.y) {
+		println("The point is inside.");
+	} else {
+		println("The point is outside.");
+	}
+} else {
+	println("The point is outside.");
+}
+
+println("Goodbye.");
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+}
+
+class Point {
+    double x;
+    double y;
+}
