@@ -1,0 +1,27 @@
+println("Lab 3.9 - Counting letters");
+
+println("Enter a sentence: ");
+String sentence = readLine();
+String[] items = sentence.split("");
+int length = items.length;
+int matches = 0;
+int i;
+
+println("Enter a letter: ");
+String letterStr = readLine();
+
+for (i = 0; i < length; i++) {
+	println(items[i]);
+	println(letter);
+	// For some reason the comparison of letters is not true even when they are the same.
+	// I need to look into this more.
+	// I can see they do match and they are the same type.
+	if (items[i] == letter) {
+		println("Here");
+		matches++;
+	}
+}
+
+println("In the sentence '" + sentence + "' there are " + matches + " occurrences of of the letter '" + letter + "'");
+
+println("Goodbye.");

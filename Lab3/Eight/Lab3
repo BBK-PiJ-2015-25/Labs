@@ -1,0 +1,19 @@
+
+import java.util.Scanner;
+
+public class Lab3 { 
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Lab 3.8 - Line to column");
+        System.out.println("Enter a string: ");
+        String sentence = input.nextLine();
+        String[] items = sentence.split("");
+        int len = items.length;
+        int i = 0;
+        for (i = 0; i < len; i++) {
+            System.out.println(items[i]);
+        }
+        System.out.println("Goodbye.");
+    }
+}
