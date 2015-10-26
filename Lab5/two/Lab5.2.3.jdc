@@ -1,0 +1,13 @@
+println("Lab5.2.3 - Hanoi towers");
+
+println("The number of moves for 64 discs is: " + hanoi(64));
+
+println("Goodbye.");
+
+int hanoi (int n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return hanoi(n*2+1);
+    }
+}
