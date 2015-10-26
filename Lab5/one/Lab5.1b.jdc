@@ -1,0 +1,13 @@
+println("Lab 5.1b - Recursive code, line by line");
+
+println(buggyMethod(9));
+
+println("Goodbye.");
+
+String buggyMethod(int n) {
+    if (n == 0) {
+        return "";
+    }
+
+    return n + "" + buggyMethod(n-2);
+}

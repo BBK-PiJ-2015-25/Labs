@@ -1,0 +1,14 @@
+println("Lab 5.2.2 - Fibonacci (Recursively)");
+
+println("Total: " + fibonacci(10));
+
+println("Goodbye.");
+
+int fibonacci (int n) {
+    if (n == 1 || n == 2) {
+        return 1;
+    } else {
+        int result = fibonacci(n-1) + fibonacci(n-2);
+        return result;
+    }
+}

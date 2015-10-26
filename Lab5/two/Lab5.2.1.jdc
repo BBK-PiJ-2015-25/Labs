@@ -1,0 +1,14 @@
+println("Lab 5.2.1 - Classics (Recursively)");
+
+println(factorial(4));
+
+println("Goodbye.");
+
+int factorial (int n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        int result = n * factorial(n-1);
+	return result;
+    }
+}

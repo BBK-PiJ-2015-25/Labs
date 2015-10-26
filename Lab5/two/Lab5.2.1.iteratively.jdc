@@ -1,0 +1,17 @@
+println("Lab 5.2.1 - Factorial (iteratively)");
+
+int factorial = 4;
+int total = factorial;
+
+while (factorial > 0) {
+    factorial--;
+    if (factorial == 1) {
+        break;
+    }
+
+    total = total * factorial;
+}
+
+println("The factorial is: " + total);
+
+println("Goodbye.");
