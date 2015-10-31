@@ -1,0 +1,16 @@
+println("Lab 3.16 - Text2number");
+
+println("Enter a number with a thousand separator (,) and two decimal places:");
+String num = readLine();
+String number = num.replace(",", "");
+
+// Split takes a regex so we need to escape the full stop
+String[] parts = number.split("\\.");
+
+int thousands = Integer.parseInt(parts[0]);
+int decimal = Integer.parseInt(parts[1]);
+
+String half = (thousands / 2) + "." + (decimal / 2);
+
+println("Half your number is: " + half);
+println("Goodbye.");
