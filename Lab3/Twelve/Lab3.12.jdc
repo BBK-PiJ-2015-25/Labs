@@ -1,14 +1,16 @@
 println("Lab 3.12 - Your change, please");
 
-println("What is the total?");
+println("What is the tota? (£)");
 String totalAmount = readLine();
 double total = Double.parseDouble(totalAmount);
 
-println("How much have you paid with?");
+println("How much have you paid with? (£)");
 String paidAmount = readLine();
 double paid = Double.parseDouble(paidAmount);
 
-println("Here");
+// Convert both into pence because of the double subtracting issue
+total = total * 100;
+paid = paid * 100;
 
 double diff = paid - total;
 
@@ -29,42 +31,42 @@ int onePence = 0;
 
 while (diff != 0.0) {
 	println(diff);
-	if (diff >= 50.0) {
+	if (diff >= 5000.0) {
 		fifty++;
+		diff = diff - 5000.0;
+	} else if (diff >= 2000.0) {
+		twenty++;
+		diff = diff - 2000.0;
+	} else if (diff >= 1000.0) {
+		ten++;
+		diff = diff - 1000.0;
+	} else if (diff >= 500.0) {
+		five++;
+		diff = diff - 500.0;
+	} else if (diff >= 200.0) {
+		two++;
+		diff = diff - 200.0;
+	} else if (diff >= 100.0) {
+		one++;
+		diff = diff - 100.0;
+	} else if (diff >= 50.0) {
+		fiftyPence++;
 		diff = diff - 50.0;
 	} else if (diff >= 20.0) {
-		twenty++;
+		twentyPence++;
 		diff = diff - 20.0;
 	} else if (diff >= 10.0) {
-		ten++;
+		tenPence++;
 		diff = diff - 10.0;
 	} else if (diff >= 5.0) {
-		five++;
+		fivePence++;
 		diff = diff - 5.0;
 	} else if (diff >= 2.0) {
-		two++;
+		twoPence++;
 		diff = diff - 2.0;
 	} else if (diff >= 1.0) {
-		one++;
-		diff = diff - 1.0;
-	} else if (diff >= 0.5) {
-		fiftyPence++;
-		diff = diff - 0.5;
-	} else if (diff >= 0.2) {
-		twentyPence++;
-		diff = diff - 0.2;
-	} else if (diff >= 0.1) {
-		tenPence++;
-		diff = diff - 0.1;
-	} else if (diff >= 0.05) {
-		fivePence++;
-		diff = diff - 0.05;
-	} else if (diff >= 0.02) {
-		twoPence++;
-		diff = diff - 0.02;
-	} else if (diff >= 0.01) {
 		onePence++;
-		diff = diff - 0.01;
+		diff = diff - 1.0;
 	} else {
 		break;
 	}

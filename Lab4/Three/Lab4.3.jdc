@@ -1,0 +1,89 @@
+// Lab 4.3 - Binary and Decimal
+
+println("Lab 4.3 - Binary and Decimal");
+String option;
+int optionInt;
+BandD bandd;
+
+println("Would you like to:");
+println("1. Convert binary to decimal");
+println("2. Convert decimal to binary");
+
+option = System.console().readLine();
+optionInt = Integer.parseInt(option);
+
+bandd = new BandD();
+
+if (optionInt == 1) {
+    println("Please enter your binary sequence: ");
+    String binary = readLine();
+    double item = bandd.binary2decimal(binary);
+    println("The decimal of the binary '" + binary + "' is '" + item + "'");
+} else if (optionInt == 2) {
+    println("Please enter your decimal: ");
+    String d = readLine();
+    double dec = Double.parseDouble(d);
+
+    String binary = bandd.decimal2binary(dec);
+
+    println("The binary representation of " + dec + " is '" + binary + "'");
+} else {
+    println("Invalid selection. Try again.");
+}
+
+println("End.");
+
+class BandD {
+
+    int power(int base, int exponent) {
+        double b = (double) base;
+        double e = (double) exponent;
+
+        int power = (int) Math.pow(base, exponent);
+        return power;
+    }
+
+    int power2(int exponent) {
+        return this.power(2, exponent);
+    }
+
+    double binary2decimal(String input) {
+        String digits[] = input.split("");
+        int l = digits.length;
+        int total = 0;
+
+        for (int i = 0; i < l; i++) {
+            if (digits[i].equals("0")) {
+                continue;
+            }
+            total += this.power2(i);
+        }
+
+        return total;
+    }
+
+    String decimal2binary(double input) {
+        String binary = "";
+        double n = input;
+
+        while (n > 0) {
+            double i = n * 2;
+
+            println(i);
+
+            if (i >= 1) {
+                binary += "1";
+                n = i - 1.0;
+
+                println(n);
+            } else {
+                binary += "0";
+                n = i;
+
+                println(n);
+            }
+        }
+
+        return binary;
+    }
+}

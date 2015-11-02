@@ -1,0 +1,47 @@
+// Lab 4.7 - A bit more practice with doubles
+
+println("Lab 4.7 - A bit more practice with doubles");
+
+println("Enter the amount of your mortgage: ");
+String total = readLine();
+double t = Double.parseDouble(total);
+
+println("Enter the interest rate: ");
+String interest = readLine();
+double i = Double.parseDouble(interest);
+
+println("Enter the number of years: ");
+String years = readLine();
+double y = Double.parseDouble(years);
+
+Mortgage mortgage = new Mortgage();
+mortgage.years = y;
+mortgage.total = t;
+mortgage.interest = i;
+
+println("The total amount to be paid on your mortgage is: " + mortgage.totalToBePaid());
+println("The amount to be paid per year is: " + mortgage.totalPerYear());
+println("The number of years before the interest is paid off: " + mortgage.yearsToPayInterest());
+
+println("Goodbye.");
+
+class Mortgage {
+	double years;
+	double total;
+	double interest;
+
+	double totalToBePaid() {
+		double t = this.total * (1 + (this.interest / 100));
+		return t;
+	}
+
+	double totalPerYear() {
+		return this.totalToBePaid() / this.years;
+	}
+
+	double yearsToPayInterest() {
+		double interestCost = this.totalToBePaid() - this.total;
+		double interestYears = interestCost / this.totalPerYear();
+		return interestYears;
+	}
+}
