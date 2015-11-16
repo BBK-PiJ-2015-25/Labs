@@ -14,15 +14,25 @@ public class Supermarket {
 		market.addPerson(customer2);
 		market.addPerson(customer3);
 		market.addPerson(customer4);
+		market.addPerson(new Person("fred"));
 		
+		market.printQueue();
+		
+		System.out.println("------------------");
+		
+		market.servePerson();
+		market.servePerson();
+		market.servePerson();
+		market.servePerson();
+		market.servePerson();
 		market.servePerson();
 		
 		market.printQueue();
 	}
 	
 	public void addPerson(Person person) {
-		if (queueStart == null) {
-			queueStart = person;
+		if (this.queueStart == null) {
+			this.queueStart = person;
 		} else {
 			Person item = this.queueStart;
 			
