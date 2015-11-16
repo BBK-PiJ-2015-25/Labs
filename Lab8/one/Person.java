@@ -1,4 +1,4 @@
-public class Person implements PersonQueue {
+public class Person {
 	
 	private Person nextPerson = null;
 	private String name;
@@ -7,15 +7,15 @@ public class Person implements PersonQueue {
 		this.name = name;
 	}
 	
-	public void insert(Person person) {
-		this.nextPerson = person;
+	public String getName() {
+		return this.name;
 	}
 	
-	public Person retrieve() {
+	public Person getNextPerson() {
 		return this.nextPerson;
 	}
 	
-	public String getName() {
-		return this.name;
+	public void setNextPerson(Person person) {
+		this.nextPerson = person;
 	}
 }
