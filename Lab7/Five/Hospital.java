@@ -85,11 +85,11 @@ public class Hospital {
 		
 		Patient a = new Patient("a", 24, "some illness");
 		Patient b = new Patient("b", 22, "some illness");
-		//Patient c = new Patient("c", 90, "some illness");
+		Patient c = new Patient("c", 90, "some illness");
 		
 		hospital.addToFront(a);
-		//hospital.addToFront(c);
-		//hospital.addToTail(b);
+		hospital.addToFront(c);
+		hospital.addToTail(b);
 		
 		hospital.safeDelete(b);
 		
