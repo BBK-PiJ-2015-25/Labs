@@ -1,0 +1,19 @@
+// Lab 5.6 - Greatest common divisor
+
+println("Lab 5.6 - Greatest common divisor");
+
+println("Enter a number: ");
+int x = readInt();
+
+println("Enter another number: ");
+int y = readInt();
+
+boolean findGCD(int x, int y) {
+	if (x > y) {
+		return findGCD(x, y) == findGCD(y, x % q);
+	} else {
+		false;
+	}
+}
+
+println("Goodbye);
