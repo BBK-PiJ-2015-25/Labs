@@ -19,12 +19,24 @@ public class MatrixChecker {
 	}
 
 	public boolean isSymmetrical(int[][] matrix) {
+		int l = matrix.length;
+
+		for (int i = 0; i < l; i++) {
+			if (matrix[0][i] != matrix[1][l - i-1]) {
+				return false;
+			}
+		}
 
 		return true;
 	}
 
 	public boolean isTriangular(int[][] matrix) {
+		int l = matrix.length;
 
-		return true;
+		if (matrix[1][0] == 0) {
+			return true;
+		}
+
+		return false;
 	}
 }
