@@ -1,21 +1,11 @@
-// Week 17
-public class TextLoop implements Runnable {
+import java.util.concurrent.*;
+
+public class TextLoopExecutor implements Executor {
 	
-	public static final int COUNT = 10;
-	private final String name;
-	
-	public TextLoop(String name) {
-		this.name = name;
-	}
-	
-	@Override
-	public void run() {
-		for (int i = 0; i < COUNT; i++) {
-			System.out.println("Loop:" + name + ", iteration:" + i + ".");
-		}
-	}
-	
-	public static void main(String args[]) {
+	public static void main(String[] args) {
+		
+		TextLoopExecutor textLoopExecutor = new TextLoopExecutor();
+		
 		if (args.length < 1 || (!args[0].equals("0") && !args[0].equals("1"))) {
 			
 			System.out.println("USAGE: java TextLoop <mode>");
@@ -33,10 +23,13 @@ public class TextLoop implements Runnable {
 			
 			for (int i = 0; i < 10; i++) {
 				Runnable r = new TextLoop("Thread " + i);
-				Thread t = new Thread(r);
-				t.start();
+				textLoopExecutor.execute(r);
 			}
 			
 		}
+	}
+	
+	public void execute(Runnable r) {
+		new Thread(r).start();
 	}
 }
