@@ -8,9 +8,7 @@ public class StringSortAscLambda {
 
 		String[] strings = {"this", "is", "not", "in", "alphabetical", "order"};
 
-		Arrays.sort(strings, (String a, String b) -> {
-			return a.compareTo(b);
-		});
+		Arrays.sort(strings, (String a, String b) -> a.compareTo(b));
 
 		System.out.println(Arrays.asList(strings));
 
