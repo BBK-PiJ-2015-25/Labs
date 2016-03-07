@@ -11,15 +11,11 @@ public class Seven {
 
 		List<String> words = Arrays.asList("hi", "four", "hello", "world", "foo", "bar", "hi five", "as", "elephant", "house", "ear", "bee");
 
-		Optional<String> concatWords = words.stream().map(String::toUpperCase)
-												   .reduce((a, b) -> a + b);
-
-		// concatWords.forEach(System.out::println);
+		Optional<String> concatWords = words.stream().reduce((a, b) -> a.toUpperCase() + b.toUpperCase());
 
 		if (concatWords.isPresent()) {
 			System.out.println(concatWords.get());
 		}
-		
 
 		System.out.println("............");
 		System.out.println("Finished.");
