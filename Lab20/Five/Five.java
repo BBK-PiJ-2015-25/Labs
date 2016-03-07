@@ -12,7 +12,7 @@ public class Five {
 
 		/**
 		 * The questions says search for a lower case 'e' but the
-		 * stream will always be empty because we lowercased everything.
+		 * stream will always be empty because we uppercased everything.
 		 */
 		Stream<String> modifiedWords = words.stream().map(String::toUpperCase)
 													 .filter(w -> w.length() < 4)
