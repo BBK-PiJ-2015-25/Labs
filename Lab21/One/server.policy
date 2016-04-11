@@ -1,0 +1,3 @@
+grant codeBase "/Users/davidjones/Dropbox/github/PiJ/Lab21/One" {
+	permission java.security.AllPermission;
+};
