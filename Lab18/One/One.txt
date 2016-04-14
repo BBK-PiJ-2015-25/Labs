@@ -1,0 +1,1 @@
+Web servers need to support concurrency. An apache web server is one example that uses threads to handle connections. If the web server gets too much traffic then a higher response time is better than an error page. So when I use Facebook, the university of Birkbeck's website and Google Drive I would expect graceful degradation.
